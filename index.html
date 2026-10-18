@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="11月29日(日)、鶴見区民センターで開催。スミレミュージックスクール主催、パステルで描く筆文字アートのクリスマスカード作り。年少さんから大人まで。">
+<meta property="og:title" content="パステルで描く筆文字アート クリスマスカード作り">
+<meta property="og:description" content="11月29日(日)10:00〜11:00／鶴見区民センター アトリエ兼工作室。年少さんから大人まで、先着15名。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/flyer.jpg">
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>クリスマスカード作り</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap">
+<style>
+/* Layout: 一枚のカードをめくるように、縦に積んだ紙のパネル。横幅は LINE から開く前提で 560px まで。 */
+:root{
+  --paper:#FBF5EA;        /* 画用紙のクリーム */
+  --panel:#FFFDF8;        /* 重ねた紙 */
+  --ink:#2F3A30;          /* 深い常緑の黒 */
+  --ink-soft:#6B7268;     /* 下げた文字 */
+  --holly:#3F7351;        /* 柊の緑 */
+  --berry:#C4453C;        /* 実の赤 */
+  --gold:#D4A24A;         /* 金のリボン */
+  --line:#E6DCCA;         /* 罫 */
+  --cta-bg:#3F7351; --cta-fg:#FFFDF8;
+  --display:"Klee One","Hiragino Mincho ProN",serif;
+  --body:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171E19; --panel:#1F2822; --ink:#F2EADC; --ink-soft:#A8B0A4;
+    --holly:#7FB58E; --berry:#E8766D; --gold:#E0B868; --line:#334036;
+    --cta-bg:#2C4A36; --cta-fg:#F2EADC;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171E19; --panel:#1F2822; --ink:#F2EADC; --ink-soft:#A8B0A4;
+  --holly:#7FB58E; --berry:#E8766D; --gold:#E0B868; --line:#334036;
+  --cta-bg:#2C4A36; --cta-fg:#F2EADC;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.9;
+  margin:0; padding:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:560px; margin:0 auto; padding-inline:16px; padding-block:0 56px;
+  display:flex; flex-direction:column; gap:28px}
+h1,h2,h3{font-family:var(--display); font-weight:600; text-wrap:balance; margin:0; line-height:1.5}
+p{margin:0}
+
+/* ---- hero ---- */
+.hero{padding-block:28px 0; display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center}
+.eyebrow{font-size:.78rem; letter-spacing:.22em; color:var(--holly); font-weight:700}
+.hero h1{font-size:clamp(1.9rem,8.5vw,2.6rem); letter-spacing:.02em}
+.hero h1 .sub{display:block; font-size:.5em; letter-spacing:.1em; color:var(--berry); margin-bottom:.5em}
+.lead{color:var(--ink-soft); font-size:.95rem}
+.wish{display:flex; flex-direction:column; gap:.55em; font-family:var(--display);
+  font-size:clamp(1rem,4.4vw,1.12rem); line-height:1.95; color:var(--ink-soft)}
+.wish .q{font-size:1.2em; color:var(--berry); margin-top:.5em}
+.hero .divider{width:46px; height:1px; background:var(--gold); border:0; margin:2px 0 0}
+.flyer{width:100%; max-width:100%; border-radius:4px; display:block;
+  box-shadow:0 10px 30px rgba(47,58,48,.16); border:1px solid var(--line)}
+
+/* ---- 日時の札 ---- */
+.facts{background:var(--panel); border:1px solid var(--line); border-radius:4px;
+  padding:20px 18px; display:grid; grid-template-columns:auto 1fr; gap:10px 16px; align-items:baseline}
+.facts dt{font-size:.78rem; color:var(--holly); font-weight:700; letter-spacing:.08em; white-space:nowrap}
+.facts dd{margin:0; font-size:1rem; min-width:0}
+.facts dd strong{font-family:var(--display); font-size:1.18rem; font-weight:600}
+.facts .note{display:block; font-size:.82rem; color:var(--ink-soft); line-height:1.7}
+
+/* ---- セクション ---- */
+section{display:flex; flex-direction:column; gap:14px}
+.ttl{display:flex; align-items:center; gap:10px; font-size:1.25rem}
+.ttl::before{content:""; width:10px; height:10px; border-radius:50%; background:var(--berry); flex:none}
+.body-copy{font-size:.97rem}
+.body-copy + .body-copy{margin-top:-2px}
+
+/* ---- 先生の声 ---- */
+.voice{background:var(--panel); border-left:3px solid var(--gold); border-radius:0 4px 4px 0;
+  padding:18px 18px 18px 20px; display:flex; flex-direction:column; gap:12px}
+.voice p{font-size:.95rem}
+.sign{font-family:var(--display); font-size:.88rem; color:var(--ink-soft); text-align:right}
+
+/* ---- 講師 ---- */
+.teacher{display:flex; flex-direction:column; gap:14px; align-items:center; background:var(--panel);
+  border:1px solid var(--line); border-radius:4px; padding:26px 18px 22px}
+.teacher img{width:124px; height:124px; max-width:100%; display:block; border-radius:50%;
+  object-fit:cover; object-position:center 18%; border:3px solid var(--gold);
+  box-shadow:0 4px 14px rgba(47,58,48,.12)}
+.teacher .inner{padding:0; width:100%; display:flex; flex-direction:column; gap:10px}
+.teacher .name{font-family:var(--display); font-size:1.2rem; text-align:center}
+.teacher .name small{display:block; text-align:center; font-family:var(--body); font-size:.76rem; letter-spacing:.1em; color:var(--berry); font-weight:700; margin-bottom:.3em}
+.site-link{align-self:center; font-size:.86rem; color:var(--holly); text-decoration:none;
+  border-bottom:1px solid currentColor; padding-bottom:1px}
+.site-link:hover{color:var(--berry)}
+
+/* ---- 安心リスト ---- */
+.points{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden}
+.points li{background:var(--panel); padding:14px 16px; font-size:.93rem; line-height:1.75;
+  display:flex; gap:12px; align-items:flex-start}
+.points li::before{content:"✓"; color:var(--holly); font-weight:700; flex:none; line-height:1.75}
+.points b{font-weight:700}
+
+/* ---- 参加費 ---- */
+.price{background:var(--panel); border:1px solid var(--line); border-radius:4px;
+  padding:20px 18px; display:grid; grid-template-columns:auto 1fr; gap:10px 16px; align-items:baseline}
+.price dt{font-size:.78rem; color:var(--holly); font-weight:700; letter-spacing:.08em; white-space:nowrap}
+.price dd{margin:0; min-width:0}
+.price dd strong{font-family:var(--display); font-size:1.3rem; font-weight:600}
+.price .note{display:block; font-size:.82rem; color:var(--ink-soft); line-height:1.7}
+
+/* ---- CTA ---- */
+.cta{background:var(--cta-bg); color:var(--cta-fg); border-radius:4px; padding:26px 20px;
+  display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center}
+.cta h2{font-size:1.2rem; color:inherit}
+.cta p{font-size:.88rem; opacity:.92}
+.phrase{font-family:var(--display); font-size:1.25rem; background:#FFFDF8; color:#2F3A30;
+  border-radius:3px; padding:14px 18px; width:100%; letter-spacing:.02em}
+.copy{font-family:var(--body); font-size:.95rem; font-weight:700; cursor:pointer;
+  background:var(--berry); color:#FFFDF8; border:none; border-radius:3px; padding:14px 26px;
+  width:100%; max-width:320px; letter-spacing:.04em}
+.copy:hover{filter:brightness(1.07)}
+.copy:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+.cta .small{font-size:.8rem; opacity:.85; line-height:1.8}
+
+/* ---- FAQ ---- */
+.faq{display:flex; flex-direction:column; gap:1px; background:var(--line);
+  border:1px solid var(--line); border-radius:4px; overflow:hidden}
+.faq details{background:var(--panel)}
+.faq summary{padding:14px 16px; font-size:.93rem; font-weight:500; cursor:pointer; list-style:none;
+  display:flex; gap:10px; align-items:flex-start}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q"; font-family:var(--display); color:var(--berry); font-weight:600; flex:none}
+.faq summary:focus-visible{outline:2px solid var(--gold); outline-offset:-2px}
+.faq p{padding:0 16px 16px 38px; font-size:.9rem; color:var(--ink-soft)}
+
+footer{text-align:center; font-size:.8rem; color:var(--ink-soft); line-height:2;
+  border-top:1px solid var(--line); padding-top:20px}
+.rule{height:1px; background:var(--line); border:0; margin:0}
+@media (prefers-reduced-motion: no-preference){
+  .hero, section{animation:rise .6s ease-out both}
+  section:nth-of-type(2){animation-delay:.05s}
+  @keyframes rise{from{opacity:.35; transform:translateY(8px)} to{opacity:1; transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">スミレミュージックスクール ＆ 筆文字アート</p>
+    <div class="wish">
+      <p>子どもには、たくさんの経験を積ませてあげたい。</p>
+      <p>親だけでは、させてあげられない経験をさせたい。</p>
+      <p>感性ゆたかな子に育ってほしい。</p>
+      <p class="q">そんな願い、ありませんか。</p>
+    </div>
+    <hr class="divider">
+    <h1><span class="sub">パステルで描く筆文字アート</span>クリスマスカード作り</h1>
+    <p class="lead">正解も不正解もない、自由な世界で。<br>世界にひとつのカードを作りませんか。</p>
+    <img class="flyer" src="img/flyer.jpg" alt="パステルで描く筆文字アート クリスマスカード作りのチラシ。子どもたちが先生と一緒にカードを作っている様子と、完成したカードの写真">
+  </header>
+
+  <dl class="facts">
+    <dt>日 時</dt>
+    <dd><strong>11月29日（日）10:00〜11:00</strong></dd>
+    <dt>場 所</dt>
+    <dd><strong>鶴見区民センター</strong><span class="note">アトリエ兼工作室</span></dd>
+    <dt>対 象</dt>
+    <dd><strong>年少さん〜大人</strong><span class="note">保護者の方の同伴も、お子さまだけのお預かりもどちらも大丈夫です</span></dd>
+    <dt>講 師</dt>
+    <dd><strong>筆文字エンターテイナー やよい先生</strong></dd>
+  </dl>
+
+  <section>
+    <h2 class="ttl">子どものうちに、たくさんの「はじめて」を</h2>
+    <div class="voice">
+      <p>感性を磨くこと。おうちの中だけではできないこと。知らない人と出会って、一緒に何かを生み出すこと。</p>
+      <p>いつもの生活とは違う体験をすると、発見があったり、新しい楽しみを見つけられたりします。新しい世界にちょっと飛び込んで、のぞいてみる。その入口を作りたくて、仲良しの筆文字アーティスト・やよい先生と一緒に、今回のイベントを企画しました。</p>
+      <p>子どもたちの可能性を、もっと広げてほしい。ふたりの共通の願いです。</p>
+      <p class="sign">スミレミュージックスクールより</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="ttl">筆文字アートって？</h2>
+    <p class="body-copy">正解も不正解も、ルールもない自由な世界です。その時の気持ちで色を選ぶ。書きたい文字を選ぶ。小さな決断を自分で重ねていくうちに、その子自身の表現の場になっていきます。</p>
+    <p class="body-copy">ピアノも筆文字アートも、自己表現のひとつ。音とはまた違うかたちで、その子の個性がのびていく時間になればと思っています。</p>
+  </section>
+
+  <section>
+    <h2 class="ttl">教えてくれる先生</h2>
+    <div class="teacher">
+      <img src="img/yayoi.jpg" alt="紫の着物で大きな筆をかかげる、筆文字エンターテイナーのやよい先生">
+      <div class="inner">
+        <p class="name"><small>筆文字エンターテイナー</small>やよい先生</p>
+        <p class="body-copy">筆文字アートの講師として活躍されている先生です。「誰かがなんとなく教える会」ではなく、本物のアートとして体験できる、めったにない機会だと思っています。安心していらしてください。</p>
+        <a class="site-link" href="https://maroan-art.studio.site" target="_blank" rel="noopener">やよい先生のサイトを見る →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="ttl">はじめてでも、大丈夫</h2>
+    <ul class="points">
+      <li><span><b>字が書けなくても参加できます。</b>やよい先生がお手伝いしたり、一緒に書いたり。ご希望があれば、先生が味のある字を書いてくれることもできます。</span></li>
+      <li><span><b>汚れる心配はほとんどありません。</b>使うのはパステル。筆も墨も使いません。</span></li>
+      <li><span><b>年少さんから大人まで楽しめます。</b>私（スミレミュージックスクール）とやよい先生のふたりが立ち会います。</span></li>
+      <li><span><b>保護者の方は、同伴でもお預けでも。</b>一緒に作っていただいてもかまいません。</span></li>
+      <li><span><b>小学生はお友達と誘い合わせてどうぞ。</b>お友達同士での参加も歓迎です。</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="ttl">参加費とお申し込み</h2>
+    <dl class="price">
+      <dt>参加費</dt>
+      <dd><strong>お一人 2,000円</strong><span class="note">材料費こみ。当日お持ちください。</span></dd>
+      <dt>定 員</dt>
+      <dd><strong>先着15名</strong><span class="note">定員になり次第しめきります。</span></dd>
+    </dl>
+  </section>
+
+  <section class="cta">
+    <h2>参加したい方へ</h2>
+    <p>公式LINEに、このひとことを送ってください。</p>
+    <p class="phrase">クリスマスカード参加します</p>
+    <button class="copy" type="button" id="copyBtn">この文をコピーする</button>
+    <p class="small">コピーしてLINEのトーク画面に貼り付け、そのまま送信していただければお申し込み完了です。<br>先着15名。定員になり次第しめきります。</p>
+  </section>
+
+  <section>
+    <h2 class="ttl">よくあるご質問</h2>
+    <div class="faq">
+      <details>
+        <summary>絵や字に自信がなくても参加できますか？</summary>
+        <p>大丈夫です。筆文字アートには正解も不正解もありません。うまく書くことより、その時の気持ちで色や文字を選ぶことを大切にする時間です。</p>
+      </details>
+      <details>
+        <summary>何歳から参加できますか？</summary>
+        <p>年少さんから参加していただけます。上は大人の方まで。ご家族でのご参加も歓迎です。</p>
+      </details>
+      <details>
+        <summary>親は一緒にいた方がいいですか？</summary>
+        <p>どちらでも大丈夫です。私とやよい先生のふたりが立ち会いますので、お子さまだけお預けいただいてもかまいませんし、一緒に作っていただいても楽しいと思います。</p>
+      </details>
+      <details>
+        <summary>持ち物はありますか？</summary>
+        <p>材料はこちらでご用意します。手ぶらでお越しください。パステルを使うので、気になる方は汚れてもよい服装だと安心です。</p>
+      </details>
+    </div>
+  </section>
+
+  <hr class="rule">
+  <footer>
+    パステルで描く筆文字アート クリスマスカード作り<br>
+    2026年11月29日（日）10:00〜11:00／鶴見区民センター アトリエ兼工作室<br>
+    主催：スミレミュージックスクール ＆ 筆文字エンターテイナー やよい
+  </footer>
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('copyBtn');
+  var phrase = 'クリスマスカード参加します';
+  var label = btn.textContent;
+  var timer;
+  btn.addEventListener('click', function(){
+    function done(msg){
+      btn.textContent = msg;
+      clearTimeout(timer);
+      timer = setTimeout(function(){ btn.textContent = label; }, 2200);
+    }
+    function fallback(){
+      var el = document.querySelector('.phrase');
+      try{
+        var r = document.createRange();
+        r.selectNodeContents(el);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        done('選択しました。長押しでコピーしてください');
+      }catch(e){
+        done('上の文を長押しでコピーしてください');
+      }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(phrase).then(function(){
+        done('コピーしました！LINEに貼り付けて送信してください');
+      }, fallback);
+    }else{
+      fallback();
+    }
+  });
+})();
+</script>
+</body>
+</html>
